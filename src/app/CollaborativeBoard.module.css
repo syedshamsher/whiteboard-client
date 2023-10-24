@@ -1,0 +1,178 @@
+.pageWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  gap: 20px;
+  height: 100vh;
+  position: relative;
+}
+
+.toolsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0px 0px 6px 0px rgba(51, 51, 51, 0.15);
+}
+
+.canvasContainer {
+  height: 90vh;
+}
+.canvas {
+  border-radius: 8px;
+  background: #fff;
+
+  /* Shadow */
+  box-shadow: 0px 0px 6px 0px rgba(51, 51, 51, 0.15);
+}
+
+.realTimeUser {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 2px;
+}
+
+.cursor {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #ff0000;
+  border: 2px solid #ffffff;
+  pointer-events: none; /* Ensures cursors do not interfere with mouse events */
+}
+
+.user {
+  width: fit-content;
+  padding: 5px;
+  border-radius: 10px;
+  background-color: #ff0000;
+  border: 2px solid #ffffff;
+  pointer-events: none; /* Ensures cursors do not interfere with mouse events */
+}
+
+section {
+  background: #fff;
+  border-radius: 7px;
+}
+.toolsBoard {
+  width: 210px;
+  padding: 15px 22px 0;
+}
+.toolsBoard .row {
+  margin-bottom: 20px;
+}
+.row .options {
+  list-style: none;
+  margin: 10px 0 0 -40px;
+}
+.row .options .option {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.option:is(:hover, .active) img {
+  filter: invert(17%) sepia(90%) saturate(3000%) hue-rotate(900deg) brightness(100%) contrast(100%);
+}
+.option :where(span, label) {
+  color: #5a6168;
+  cursor: pointer;
+  padding-left: 10px;
+}
+.option:is(:hover, .active) :where(span, label) {
+  color: #4a98f7;
+}
+.option #fillColor {
+  cursor: pointer;
+  height: 14px;
+  width: 14px;
+}
+#fillColor:checked ~ label {
+  color: #4a98f7;
+}
+.option #sizeSlider {
+  width: 100%;
+  height: 5px;
+  margin-top: 10px;
+}
+
+.colors .options {
+  display: flex;
+  justify-content: space-between;
+}
+.colors .option {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  margin-top: 3px;
+  position: relative;
+}
+.colors .option:nth-child(1) {
+  background-color: #fff;
+  border: 1px solid #bfbfbf;
+}
+.colors .option:nth-child(2) {
+  background-color: #000;
+}
+.colors .option:nth-child(3) {
+  background-color: #e02020;
+}
+.colors .option:nth-child(4) {
+  background-color: #6dd400;
+}
+.colors .option:nth-child(5) {
+  background-color: #4a98f7;
+}
+.colors .option:nth-child(5) img {
+  display: none !important;
+}
+
+.colors .option.selected::before {
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 50%;
+  height: 12px;
+  width: 12px;
+  background: inherit;
+  border-radius: inherit;
+  border: 2px solid #fff;
+  transform: translate(-50%, -50%);
+}
+.colors .option:first-child.selected::before {
+  border-color: #ccc;
+}
+.option #colorPicker {
+  opacity: 0;
+  cursor: pointer;
+}
+.buttons button {
+  width: 100%;
+  color: #fff;
+  border: none;
+  outline: none;
+  padding: 11px 0;
+  font-size: 0.9rem;
+  margin-bottom: 13px;
+  background: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.buttons .clearCanvas {
+  color: #6c757d;
+  border: 1px solid #6c757d;
+  transition: all 0.3s ease;
+}
+.clearCanvas:hover {
+  color: #fff;
+  background: #6c757d;
+}
+.buttons .saveImg {
+  background: #4a98f7;
+  border: 1px solid #4a98f7;
+}
